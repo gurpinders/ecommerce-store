@@ -1,6 +1,7 @@
 // Packages Imported:
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 
 //Routes Imported:
 import authRoutes from "./routes/auth.route.js";
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 // Allows you to parse the body of the request
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 
